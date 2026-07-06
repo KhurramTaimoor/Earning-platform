@@ -19,3 +19,5 @@ export default function AdminSubmissions() {
     <section className="card tableCard"><table><thead><tr><th>User</th><th>Task</th><th>Proof</th><th>Reward</th><th>Status</th><th>Action</th></tr></thead><tbody>{submissions.map((s)=><tr key={s.id}><td>{s.user?.name}<br/><small>{s.user?.email}</small></td><td>{s.task?.title}</td><td>{s.proof_url ? <a href={s.proof_url} target="_blank" rel="noreferrer">View</a> : s.proof_text || 'N/A'}</td><td>PKR {s.reward_amount}</td><td><span className={`badge ${s.status}`}>{s.status}</span></td><td>{s.status==='pending'?<div className="actions"><button className="btn small" onClick={()=>review(s.id,'approved')}>Approve</button><button className="btn danger small" onClick={()=>review(s.id,'rejected')}>Reject</button></div>:'-'}</td></tr>)}</tbody></table></section>
   </main>;
 }
+
+

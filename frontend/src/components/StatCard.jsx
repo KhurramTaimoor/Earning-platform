@@ -8,3 +8,5 @@ export default function StatCard({ title, value, note }) {
     </div>
   );
 }
+
+

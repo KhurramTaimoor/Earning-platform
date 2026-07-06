@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_BASE = import.meta.env.VITE_API_URL || 'https://earning-platform-cykm.onrender.com/api';
 
 function getSavedToken() {
   return (
@@ -376,3 +376,4 @@ export default function AdminPackages() {
     </main>
   );
 }
+

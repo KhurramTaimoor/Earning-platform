@@ -19,3 +19,5 @@ export default function AdminWithdrawals() {
     <section className="card tableCard"><table><thead><tr><th>User</th><th>Amount</th><th>Method</th><th>Account</th><th>Status</th><th>Action</th></tr></thead><tbody>{withdrawals.map((w)=><tr key={w.id}><td>{w.user?.name}<br/><small>{w.user?.email}</small></td><td>PKR {w.amount}</td><td>{w.method}</td><td>{w.account_title}<br/><small>{w.account_number}</small></td><td><span className={`badge ${w.status}`}>{w.status}</span></td><td>{w.status==='pending'?<div className="actions"><button className="btn small" onClick={()=>review(w.id,'paid')}>Mark Paid</button><button className="btn danger small" onClick={()=>review(w.id,'rejected')}>Reject</button></div>:'-'}</td></tr>)}</tbody></table></section>
   </main>;
 }
+
+
