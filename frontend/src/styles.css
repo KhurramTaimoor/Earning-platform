@@ -9,29 +9,22 @@
   --success: #15803d;
   --danger: #b91c1c;
   --warning: #b45309;
-
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
+html,
 body {
   margin: 0;
   width: 100%;
   max-width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
   background: var(--bg);
   color: var(--text);
-  overflow-x: hidden;
 }
 
 a {
@@ -50,16 +43,9 @@ button {
   border: 0;
 }
 
-img,
-video,
-iframe {
+img {
   max-width: 100%;
-}
-
-main,
-section,
-div {
-  max-width: 100%;
+  display: block;
 }
 
 /* =========================
@@ -73,7 +59,7 @@ div {
   justify-content: space-between;
   gap: 18px;
   padding: 0 34px;
-  background: rgba(255, 255, 255, 0.86);
+  background: rgba(255, 255, 255, 0.9);
   border-bottom: 1px solid rgba(226, 232, 240, 0.9);
   position: sticky;
   top: 0;
@@ -88,11 +74,7 @@ div {
   display: flex;
   align-items: center;
   gap: 12px;
-  transition: 0.3s ease;
-}
-
-.brand:hover {
-  transform: translateY(-2px);
+  min-width: 0;
 }
 
 .brandMark {
@@ -113,6 +95,7 @@ div {
   display: flex;
   flex-direction: column;
   line-height: 1.1;
+  min-width: 0;
 }
 
 .brand strong {
@@ -135,7 +118,6 @@ div {
 }
 
 .nav a,
-.adminDropdown button,
 .logoutBtn {
   position: relative;
   padding: 10px 13px;
@@ -149,11 +131,9 @@ div {
 }
 
 .nav a:hover,
-.adminDropdown button:hover,
 .logoutBtn:hover {
   background: #eff6ff;
   color: #2563eb;
-  transform: translateY(-2px);
 }
 
 .nav a.active {
@@ -173,47 +153,9 @@ div {
   box-shadow: 0 12px 24px rgba(37, 99, 235, 0.24);
 }
 
-.navRegister:hover {
-  color: white !important;
-  background: linear-gradient(135deg, #172554, #2563eb) !important;
-}
-
 .logoutBtn {
   color: #b91c1c;
   font-weight: 900;
-}
-
-.adminDropdown {
-  position: relative;
-}
-
-.adminDropdown button {
-  color: #172554;
-  font-weight: 900;
-}
-
-.adminMenu {
-  position: absolute;
-  top: 46px;
-  right: 0;
-  width: 230px;
-  padding: 10px;
-  border-radius: 18px;
-  background: white;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.14);
-  display: none;
-  animation: dropdownFade 0.25s ease both;
-}
-
-.adminDropdown:hover .adminMenu {
-  display: grid;
-  gap: 4px;
-}
-
-.adminMenu a {
-  padding: 12px 14px;
-  border-radius: 12px;
 }
 
 .menuBtn {
@@ -236,7 +178,7 @@ div {
 }
 
 /* =========================
-   COMMON LAYOUT
+   COMMON
 ========================= */
 
 .page {
@@ -259,7 +201,7 @@ label {
   flex-direction: column;
   gap: 8px;
   margin: 14px 0;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--text);
 }
 
@@ -288,29 +230,16 @@ textarea {
 }
 
 .btn {
-  border: 0;
   border-radius: 13px;
   background: var(--primary2);
   color: white;
   padding: 12px 18px;
-  font-weight: 800;
+  font-weight: 900;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  transition: 0.25s ease;
-}
-
-.btn:hover {
-  filter: brightness(0.98);
-  transform: translateY(-1px);
-}
-
-.btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none;
 }
 
 .btn.secondary {
@@ -331,13 +260,6 @@ textarea {
 .btn.small {
   padding: 8px 12px;
   font-size: 13px;
-}
-
-.actions {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  flex-wrap: wrap;
 }
 
 .muted {
@@ -365,77 +287,11 @@ textarea {
   line-height: 1.6;
 }
 
-/* =========================
-   DASHBOARD / ADMIN
-========================= */
-
-.statsGrid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(160px, 1fr));
-  gap: 16px;
-  margin-bottom: 24px;
-}
-
-.statCard {
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 20px;
-  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.04);
-}
-
-.statCard p {
-  margin: 0 0 8px;
-  color: var(--muted);
-  font-weight: 700;
-}
-
-.statCard h3 {
-  margin: 0;
-  color: var(--primary);
-  font-size: 28px;
-}
-
-.statCard span {
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.packageGrid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(240px, 1fr));
-  gap: 18px;
-  margin-bottom: 24px;
-}
-
-.packageCard h3 {
-  margin: 10px 0;
-  color: var(--primary);
-}
-
-.price {
-  font-size: 30px;
-  font-weight: 900;
-  color: var(--primary2);
-  margin: 8px 0;
-}
-
-.smallPrice {
-  font-size: 18px;
-}
-
-.packageLine {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
 .alert {
   padding: 14px 16px;
   border-radius: 14px;
   margin-bottom: 18px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .alert.error {
@@ -446,11 +302,6 @@ textarea {
 .alert.success {
   background: #dcfce7;
   color: #166534;
-}
-
-.alert.warning {
-  background: #fef3c7;
-  color: #92400e;
 }
 
 .badge {
@@ -510,22 +361,6 @@ th {
   letter-spacing: 0.06em;
 }
 
-.gridTwo {
-  display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 18px;
-  align-items: start;
-}
-
-.summaryBar {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-bottom: 18px;
-  font-weight: 800;
-  color: var(--primary);
-}
-
 .modalBackdrop {
   position: fixed;
   inset: 0;
@@ -537,25 +372,13 @@ th {
 }
 
 .modal {
-  width: min(520px, 100%);
+  width: min(560px, 100%);
   max-height: 90vh;
   overflow-y: auto;
 }
 
-.bankBox {
-  background: #eff6ff;
-  border: 1px dashed #93c5fd;
-  color: #1e3a8a;
-  border-radius: 16px;
-  padding: 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin: 14px 0;
-}
-
 /* =========================
-   HOME PAGE
+   HOME
 ========================= */
 
 .home-page {
@@ -577,11 +400,6 @@ th {
   grid-template-columns: 1.2fr 0.8fr;
   align-items: center;
   gap: 70px;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
 }
 
 .hero-badge {
@@ -685,7 +503,7 @@ th {
 .floatingTaskCard {
   position: absolute;
   z-index: 2;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.94);
   border: 1px solid rgba(226, 232, 240, 0.9);
   backdrop-filter: blur(16px);
   border-radius: 24px;
@@ -697,7 +515,6 @@ th {
   bottom: 46px;
   width: 230px;
   padding: 22px;
-  animation: floatMini 4.6s ease-in-out infinite;
 }
 
 .floatingWalletCard span {
@@ -724,7 +541,6 @@ th {
   width: 150px;
   padding: 22px;
   text-align: center;
-  animation: floatMini 5.2s ease-in-out infinite reverse;
 }
 
 .floatingTaskCard strong {
@@ -756,14 +572,6 @@ th {
   border-radius: 999px;
   font-weight: 900;
   font-size: 14px;
-}
-
-.section-heading span::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #2563eb;
 }
 
 .section-heading h2 {
@@ -804,12 +612,6 @@ th {
   border-radius: 28px;
   border: 1px solid #dbe3f0;
   box-shadow: 0 20px 50px rgba(15, 23, 42, 0.07);
-  transition: 0.35s ease;
-}
-
-.step-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 28px 70px rgba(37, 99, 235, 0.16);
 }
 
 .step-card strong {
@@ -822,7 +624,6 @@ th {
   color: white;
   font-size: 22px;
   font-weight: 950;
-  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.22);
 }
 
 .step-card h3 {
@@ -837,24 +638,22 @@ th {
   margin: 0;
 }
 
-.market-grid {
+.market-grid,
+.packages-grid,
+.features-section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 26px;
 }
 
-.market-card {
+.market-card,
+.package-card,
+.feature-box {
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid #dbe3f0;
   border-radius: 30px;
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
-  transition: 0.35s ease;
-}
-
-.market-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 30px 75px rgba(37, 99, 235, 0.17);
 }
 
 .market-card-img {
@@ -863,65 +662,30 @@ th {
   background: #eef4ff;
 }
 
-.market-card-img img {
-  transition: 0.5s ease;
-}
-
-.market-card:hover .market-card-img img {
-  transform: scale(1.08);
-}
-
 .market-card-body {
   padding: 28px;
 }
 
-.market-card-body h3 {
+.market-card-body h3,
+.feature-box h3 {
   margin: 0 0 12px;
   color: #172554;
   font-size: 24px;
 }
 
-.market-card-body p {
+.market-card-body p,
+.feature-box p {
   margin: 0;
   color: #64748b;
   line-height: 1.7;
 }
 
-.packages-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-}
-
 .package-card {
-  background: rgba(255, 255, 255, 0.92);
   min-height: 360px;
   padding: 36px 30px;
-  border-radius: 30px;
-  border: 1px solid #dbe3f0;
-  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: 0.35s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.package-card::after {
-  content: "";
-  position: absolute;
-  width: 140px;
-  height: 140px;
-  right: -70px;
-  bottom: -70px;
-  border-radius: 50%;
-  background: rgba(37, 99, 235, 0.08);
-}
-
-.package-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 30px 75px rgba(37, 99, 235, 0.18);
 }
 
 .package-top {
@@ -929,8 +693,6 @@ th {
   justify-content: space-between;
   align-items: center;
   gap: 14px;
-  position: relative;
-  z-index: 1;
 }
 
 .package-top h3 {
@@ -948,26 +710,10 @@ th {
   white-space: nowrap;
 }
 
-.package-card > p {
-  margin: 30px 0 8px;
-  color: #53698d;
-  font-size: 16px;
-  position: relative;
-  z-index: 1;
-}
-
 .package-card h2 {
   margin: 0 0 22px;
   font-size: 31px;
   color: #14245a;
-  position: relative;
-  z-index: 1;
-}
-
-.package-info {
-  margin: 6px 0 28px;
-  position: relative;
-  z-index: 1;
 }
 
 .package-info p {
@@ -989,41 +735,11 @@ th {
   color: #2563eb;
   padding: 15px 18px;
   border-radius: 16px;
-  position: relative;
-  z-index: 1;
-}
-
-.features-section {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 26px;
 }
 
 .feature-box {
-  background: rgba(255, 255, 255, 0.92);
   min-height: 240px;
   padding: 34px;
-  border-radius: 28px;
-  border: 1px solid #dbe3f0;
-  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.07);
-  transition: 0.35s ease;
-}
-
-.feature-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 28px 70px rgba(37, 99, 235, 0.14);
-}
-
-.feature-box h3 {
-  font-size: 25px;
-  margin: 0 0 16px;
-  color: #14245a;
-}
-
-.feature-box p {
-  color: #53698d;
-  line-height: 1.75;
-  margin: 0;
 }
 
 .cta-section {
@@ -1039,7 +755,6 @@ th {
 .cta-section h2 {
   font-size: clamp(34px, 5vw, 50px);
   margin: 0 0 14px;
-  letter-spacing: -1px;
 }
 
 .cta-section p {
@@ -1051,7 +766,7 @@ th {
 }
 
 /* =========================
-   LOGIN + SIGNUP
+   AUTH PAGES
 ========================= */
 
 .authPage {
@@ -1093,28 +808,6 @@ th {
 
 .signupSide {
   background: linear-gradient(135deg, #0f172a, #2563eb);
-}
-
-.authSide::before {
-  content: "";
-  position: absolute;
-  width: 230px;
-  height: 230px;
-  border-radius: 50%;
-  top: -90px;
-  right: -70px;
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.authSide::after {
-  content: "";
-  position: absolute;
-  width: 170px;
-  height: 170px;
-  border-radius: 50%;
-  bottom: -70px;
-  left: -55px;
-  background: rgba(255, 255, 255, 0.1);
 }
 
 .authBadge {
@@ -1185,7 +878,6 @@ th {
   background: rgba(255, 255, 255, 0.94);
   border: 1px solid #dbe3f0;
   box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08);
-  animation: fadeUp 0.7s ease both;
 }
 
 .authHeader h2 {
@@ -1211,7 +903,6 @@ th {
 .signupCard input {
   min-height: 54px;
   border-radius: 16px;
-  background: #ffffff;
 }
 
 .loginSubmitBtn {
@@ -1233,27 +924,19 @@ th {
 }
 
 /* =========================
-   DASHBOARD EXTRA
+   DASHBOARD / PACKAGES
 ========================= */
 
-.dashboardPage {
-  padding-top: 42px;
-}
-
-.dashboardHeader {
-  margin-bottom: 28px;
-}
-
+.statsGrid,
 .dashboardStatsOneLine {
-  display: grid !important;
+  display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   gap: 28px !important;
-  width: 100% !important;
-  margin-bottom: 48px !important;
+  width: 100%;
+  margin-bottom: 48px;
 }
 
-.dashboardStatsOneLine .statCard {
-  width: 100%;
+.statCard {
   min-height: 128px;
   padding: 24px 26px;
   border-radius: 20px;
@@ -1262,22 +945,55 @@ th {
   box-shadow: 0 18px 45px rgba(15, 23, 42, 0.06);
 }
 
-.dashboardStatsOneLine .statCard p {
+.statCard p {
   margin: 0 0 12px;
   color: #53698d;
   font-size: 15px;
   font-weight: 900;
 }
 
-.dashboardStatsOneLine .statCard h3 {
+.statCard h3 {
   margin: 0;
   color: #06184a;
   font-size: 30px;
   font-weight: 950;
 }
 
-.dashboardPackages {
-  margin-top: 10px;
+.packageGrid,
+.dashboardPackageGrid,
+.packagesPageGrid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 28px !important;
+}
+
+.packageCard,
+.dashboardPackageCard,
+.packagesPageCard {
+  min-height: 275px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.packageCard h3,
+.dashboardPackageCard h3,
+.packagesPageCard h3 {
+  margin: 6px 0 0;
+  font-size: 23px;
+  color: #172554;
+}
+
+.price {
+  margin: 4px 0;
+  font-size: 30px;
+  font-weight: 950;
+  color: #2563eb;
+}
+
+.packageActivateBtn {
+  width: 100%;
+  margin-top: auto;
 }
 
 .sectionMiniHeader {
@@ -1301,46 +1017,6 @@ th {
   line-height: 1.6;
 }
 
-.dashboardPackageGrid,
-.packageGrid.dashboardPackageGrid {
-  display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  gap: 28px !important;
-  width: 100% !important;
-  margin-bottom: 0;
-}
-
-.dashboardPackageCard {
-  min-height: 275px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  border-radius: 22px;
-}
-
-.dashboardPackageCard h3 {
-  margin: 6px 0 0;
-  font-size: 23px;
-  color: #172554;
-}
-
-.dashboardPackageCard .price {
-  margin: 4px 0;
-  font-size: 30px;
-}
-
-.dashboardPackageCard .btn {
-  margin-top: auto;
-}
-
-.packageActivateBtn {
-  width: 100%;
-}
-
-/* =========================
-   PACKAGES PAGE
-========================= */
-
 .activePackageBox {
   margin-bottom: 36px;
   padding: 30px;
@@ -1359,27 +1035,6 @@ th {
   font-size: 12px;
   font-weight: 900;
   margin-bottom: 14px;
-}
-
-.activePackageTitleRow {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 18px;
-  margin-bottom: 22px;
-}
-
-.activePackageTitleRow h2,
-.noActivePackageBox h2 {
-  margin: 0 0 8px;
-  color: #06184a;
-  font-size: 32px;
-}
-
-.activePackageTitleRow p,
-.noActivePackageBox p {
-  margin: 0;
-  line-height: 1.7;
 }
 
 .activePackageInfo {
@@ -1408,52 +1063,8 @@ th {
   word-break: break-word;
 }
 
-.activePackageInfo .smallStrong {
-  font-size: 15px;
-  line-height: 1.5;
-}
-
-.noActivePackageBox {
-  padding-top: 6px;
-}
-
-.transactionHistorySection {
-  margin-top: 10px;
-  margin-bottom: 42px;
-}
-
-.transactionHistorySection .tableCard {
-  border-radius: 22px;
-}
-
 /* =========================
-   WALLET PAGE
-========================= */
-
-.walletPage {
-  padding-top: 38px;
-}
-
-.walletTransactionsCard {
-  padding: 24px;
-  border-radius: 24px;
-}
-
-.walletTransactionsCard table {
-  width: 100%;
-}
-
-.walletTransactionsCard th {
-  color: #53698d;
-  font-weight: 900;
-}
-
-.walletTransactionsCard td strong {
-  color: #06184a;
-}
-
-/* =========================
-   WITHDRAWALS PAGE
+   WITHDRAWALS
 ========================= */
 
 .withdrawalsPage {
@@ -1471,12 +1082,9 @@ th {
   display: grid;
   grid-template-columns: 1fr 0.9fr;
   gap: 28px;
-  align-items: stretch;
 }
 
 .withdrawalSide {
-  position: relative;
-  overflow: hidden;
   border-radius: 30px;
   padding: 42px;
   background: linear-gradient(135deg, #172554, #2563eb);
@@ -1484,31 +1092,7 @@ th {
   box-shadow: 0 28px 80px rgba(37, 99, 235, 0.25);
 }
 
-.withdrawalSide::before {
-  content: "";
-  position: absolute;
-  width: 230px;
-  height: 230px;
-  border-radius: 50%;
-  top: -90px;
-  right: -70px;
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.withdrawalSide::after {
-  content: "";
-  position: absolute;
-  width: 170px;
-  height: 170px;
-  border-radius: 50%;
-  bottom: -70px;
-  left: -55px;
-  background: rgba(255, 255, 255, 0.1);
-}
-
 .withdrawalSide h1 {
-  position: relative;
-  z-index: 1;
   margin: 26px 0 14px;
   font-size: 48px;
   line-height: 1.05;
@@ -1516,8 +1100,6 @@ th {
 }
 
 .withdrawalSide p {
-  position: relative;
-  z-index: 1;
   margin: 0;
   color: rgba(255, 255, 255, 0.82);
   font-size: 16px;
@@ -1525,8 +1107,6 @@ th {
 }
 
 .withdrawalBalanceBox {
-  position: relative;
-  z-index: 1;
   margin-top: 28px;
   padding: 22px;
   border-radius: 22px;
@@ -1556,20 +1136,12 @@ th {
   background: rgba(255, 255, 255, 0.94);
   border: 1px solid #dbe3f0;
   box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08);
-  animation: fadeUp 0.7s ease both;
-}
-
-.withdrawalCard label {
-  margin: 16px 0;
-  color: #172554;
-  font-weight: 900;
 }
 
 .withdrawalCard input,
 .withdrawalCard select {
   min-height: 54px;
   border-radius: 16px;
-  background: #ffffff;
 }
 
 .withdrawalHistorySection {
@@ -1577,25 +1149,12 @@ th {
   margin: 36px auto 0;
 }
 
-.withdrawalHistoryCard {
-  border-radius: 24px;
-  padding: 24px;
-}
-
-.withdrawalHistoryCard td strong {
-  color: #06184a;
-}
-
 /* =========================
-   ADMIN PAGES
+   ADMIN + MODAL
 ========================= */
 
 .adminCleanPage {
   padding-top: 34px;
-}
-
-.adminPageHeader .btn {
-  min-width: 160px;
 }
 
 .adminListCard {
@@ -1603,20 +1162,11 @@ th {
   padding: 26px;
 }
 
-.adminListCard h2 {
-  margin: 0 0 18px;
-  color: #06184a;
-  font-size: 24px;
-}
-
-.adminCreateModal {
+.adminCreateModal,
+.activatePackageModal {
   width: min(620px, 100%);
   border-radius: 28px;
   padding: 30px;
-}
-
-.adminCreateModal label {
-  margin: 15px 0;
 }
 
 .adminCreateModal input,
@@ -1624,10 +1174,6 @@ th {
 .adminCreateModal textarea {
   min-height: 52px;
   border-radius: 16px;
-}
-
-.adminCreateModal textarea {
-  min-height: 110px;
 }
 
 .checkboxLabel {
@@ -1639,24 +1185,6 @@ th {
 .checkboxLabel input {
   width: auto;
   min-height: auto;
-}
-
-.adminPaymentSettingsCard {
-  max-width: 920px;
-}
-
-.paymentSettingsGrid {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-/* =========================
-   DEPOSIT / PACKAGE MODAL
-========================= */
-
-.activatePackageModal {
-  width: min(620px, 100%);
-  border-radius: 28px;
-  padding: 30px;
 }
 
 .modalHeader {
@@ -1671,11 +1199,6 @@ th {
   margin: 0 0 8px;
   color: #06184a;
   font-size: 28px;
-}
-
-.modalHeader p {
-  margin: 0;
-  line-height: 1.6;
 }
 
 .depositDetailsBox {
@@ -1698,7 +1221,7 @@ th {
 .depositGrid div {
   padding: 15px;
   border-radius: 16px;
-  background: #ffffff;
+  background: white;
   border: 1px solid #e2e8f0;
 }
 
@@ -1715,437 +1238,168 @@ th {
   word-break: break-word;
 }
 
-.depositNote {
-  margin: 16px 0 0;
-  color: #53698d;
-  line-height: 1.6;
-  font-weight: 700;
-}
-
-.selectedFileBox {
-  margin: 12px 0 16px;
-  padding: 12px 14px;
-  border-radius: 14px;
-  background: #eff6ff;
-  color: #1e3a8a;
-  font-size: 14px;
-}
-
 /* =========================
-   ANIMATIONS
+   IMPORTANT MOBILE FIX
+   Mobile par desktop style same rahega
+   Bas font/card sizes chotay hongay
 ========================= */
 
-.animate-up {
-  animation: fadeUp 0.9s ease both;
-}
-
-.animate-card {
-  animation: fadeUp 0.9s ease both;
-}
-
-.animate-float {
-  animation: floatCard 4s ease-in-out infinite;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(34px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes floatCard {
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-16px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes floatMini {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
-
-  50% {
-    transform: translateY(-14px) rotate(1.5deg);
-  }
-}
-
-@keyframes dropdownFade {
-  from {
-    opacity: 0;
-    transform: translateY(8px) scale(0.97);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* =========================================================
-   RESPONSIVE DESIGN
-========================================================= */
-
-@media (min-width: 1200px) {
-  .page {
-    max-width: 1240px;
-    padding: 36px 32px;
-  }
-
-  .hero-section,
-  .how-section,
-  .market-section,
-  .packages-section,
-  .features-section,
-  .cta-section {
-    max-width: 1180px;
-  }
-}
-
-@media (max-width: 1199px) {
-  .page {
-    max-width: 100%;
-    padding: 30px 24px;
-  }
-
+@media (max-width: 768px) {
   .topbar {
-    padding: 0 24px;
+    min-height: 64px;
+    padding: 10px 14px;
+  }
+
+  .brandMark {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    font-size: 11px;
+  }
+
+  .brand strong {
+    font-size: 16px;
+  }
+
+  .brand small {
+    font-size: 9px;
+  }
+
+  .menuBtn {
+    display: block;
+    width: 40px;
+    height: 40px;
   }
 
   .nav {
+    display: none;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+  }
+
+  .nav.showNav {
+    display: grid !important;
     gap: 6px;
   }
 
   .nav a,
   .logoutBtn {
-    padding: 9px 10px;
+    width: 100%;
+    padding: 10px 12px;
     font-size: 13px;
   }
 
-  .hero-section {
-    grid-template-columns: 1fr 0.9fr;
-    gap: 42px;
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-
-  .hero-content h1 {
-    font-size: 58px;
-  }
-
-  .dashboardStatsOneLine {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: 20px !important;
-  }
-
-  .dashboardPackageGrid,
-  .packageGrid.dashboardPackageGrid,
-  .packagesPageGrid {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: 22px !important;
-  }
-
-  .statsGrid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 1024px) {
-  .topbar {
-    min-height: 74px;
-    height: auto;
-    padding: 14px 20px;
-  }
-
-  .brandMark {
-    width: 42px;
-    height: 42px;
-  }
-
-  .brand strong {
-    font-size: 18px;
-  }
-
-  .brand small {
-    font-size: 10px;
-  }
-
-  .nav a,
-  .logoutBtn {
-    font-size: 13px;
-    padding: 9px 9px;
-  }
-
-  .hero-section {
-    grid-template-columns: 1fr;
-    min-height: auto;
-    padding: 58px 22px 46px;
-    text-align: center;
-  }
-
-  .hero-content p {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-actions {
-    justify-content: center;
-  }
-
-  .pakMarketVisual {
-    width: 100%;
-    max-width: 640px;
-    margin: 0 auto;
-  }
-
-  .mainMarketImage {
-    height: 360px;
-  }
-
-  .steps-grid,
-  .market-grid,
-  .features-section {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
-
-  .packages-grid,
-  .packageGrid,
-  .dashboardPackageGrid,
-  .packageGrid.dashboardPackageGrid,
-  .packagesPageGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
-
-  .statsGrid,
-  .dashboardStatsOneLine {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
-
-  .gridTwo,
-  .authShell,
-  .signupShell,
-  .withdrawalShell {
-    grid-template-columns: 1fr !important;
-  }
-
-  .authShell,
-  .signupShell,
-  .withdrawalShell {
-    max-width: 760px;
-  }
-
-  .authSide,
-  .withdrawalSide {
-    min-height: auto;
-  }
-
-  .authSide h1,
-  .withdrawalSide h1 {
-    font-size: 40px;
-  }
-
-  .activePackageInfo {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .depositGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 900px) {
-  .topbar {
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 12px 16px;
-  }
-
-  .brand {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .brand div {
-    min-width: 0;
-  }
-
-  .brand strong {
-    white-space: nowrap;
-  }
-
-  .menuBtn {
-    display: block;
-    margin-left: auto;
-  }
-
-  .nav {
-    display: none;
-    width: 100%;
-    margin-top: 12px;
-    padding: 12px;
-    border-radius: 18px;
-    background: #ffffff;
-    border: 1px solid var(--border);
-    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
-  }
-
-  .nav.showNav {
-    display: grid !important;
-    gap: 8px;
-  }
-
-  .nav a,
-  .logoutBtn {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    text-align: left;
-    padding: 12px 14px;
-  }
-
-  .navAuth {
-    display: grid;
-    width: 100%;
-    gap: 8px;
-  }
-
-  .navRegister {
-    justify-content: center !important;
-    text-align: center !important;
-  }
-
-  .adminDropdown {
-    width: 100%;
-  }
-
-  .adminDropdown button {
-    width: 100%;
-  }
-
-  .adminMenu {
-    position: static;
-    width: 100%;
-    margin-top: 8px;
-    display: grid;
-    box-shadow: none;
-    background: #f8fafc;
-  }
-}
-
-@media (max-width: 768px) {
   .page {
-    padding: 22px 16px;
+    padding: 20px 14px;
   }
 
-  .pageHeader,
-  .adminPageHeader,
-  .dashboardHeader,
-  .sectionMiniHeader,
-  .modalHeader,
-  .activePackageTitleRow,
-  .activePackageTop {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 14px !important;
+  .pageHeader {
+    gap: 12px;
   }
 
   .pageHeader h1 {
-    font-size: 30px;
-    line-height: 1.1;
+    font-size: 26px;
   }
 
   .pageHeader p {
-    font-size: 14px;
-    line-height: 1.6;
+    font-size: 13px;
   }
 
-  .btn,
-  .primary-btn,
-  .secondary-btn,
-  .package-link,
-  .packageActivateBtn,
-  .loginSubmitBtn,
-  .adminPageHeader .btn,
-  .dashboardHeader .btn,
-  .sectionMiniHeader .btn,
-  .modalHeader .btn {
-    width: 100% !important;
-    min-height: 48px;
-  }
-
-  .card,
-  .statCard,
-  .packageCard,
-  .package-card,
-  .market-card,
-  .step-card,
-  .feature-box,
-  .activePackageBox,
-  .withdrawalCard,
-  .withdrawalSide,
-  .authSide,
-  .loginCard,
-  .signupCard,
-  .adminCreateModal,
-  .activatePackageModal {
-    border-radius: 22px !important;
-  }
-
+  /* Home same desktop style, not broken */
   .hero-section {
-    padding: 42px 16px 36px;
-    gap: 30px;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 14px;
+    padding: 34px 14px 34px;
+    min-height: auto;
+    text-align: left;
+  }
+
+  .hero-badge {
+    font-size: 10px;
+    padding: 7px 10px;
+    margin-bottom: 12px;
   }
 
   .hero-content h1 {
-    font-size: 42px;
-    line-height: 1;
-    letter-spacing: -1.5px;
+    font-size: 31px;
+    line-height: 1.02;
+    letter-spacing: -1px;
   }
 
   .hero-content p {
-    font-size: 15px;
-    line-height: 1.7;
+    font-size: 12.5px;
+    line-height: 1.55;
+    margin-top: 14px;
   }
 
   .hero-actions {
-    display: grid;
-    grid-template-columns: 1fr;
-    width: 100%;
+    display: flex;
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: auto;
+    flex: 1;
+    min-height: 42px;
+    padding: 11px 10px;
+    font-size: 12px;
+    border-radius: 12px;
   }
 
   .pakMarketVisual {
-    min-height: auto;
+    min-height: 250px;
+  }
+
+  .marketImage {
+    border-radius: 22px;
+    border-width: 6px;
   }
 
   .mainMarketImage {
-    height: 270px;
-    border-width: 7px;
-    border-radius: 24px;
+    height: 180px;
   }
 
-  .floatingWalletCard,
+  .floatingWalletCard {
+    left: -8px;
+    bottom: 6px;
+    width: 130px;
+    padding: 12px;
+    border-radius: 16px;
+  }
+
+  .floatingWalletCard span {
+    font-size: 10px;
+  }
+
+  .floatingWalletCard h3 {
+    font-size: 20px;
+    margin: 5px 0;
+  }
+
+  .floatingWalletCard p {
+    font-size: 10px;
+  }
+
   .floatingTaskCard {
-    position: relative !important;
-    left: auto !important;
-    right: auto !important;
-    top: auto !important;
-    bottom: auto !important;
-    width: 100% !important;
-    margin-top: 14px;
+    right: -6px;
+    top: 10px;
+    width: 82px;
+    padding: 11px;
+    border-radius: 16px;
+  }
+
+  .floatingTaskCard strong {
+    font-size: 24px;
+  }
+
+  .floatingTaskCard span {
+    font-size: 10px;
   }
 
   .how-section,
@@ -2153,327 +1407,521 @@ th {
   .packages-section,
   .features-section,
   .cta-section {
-    padding: 42px 16px;
+    padding: 38px 14px;
   }
 
   .section-heading {
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
 
-  .section-heading h2,
-  .sectionMiniHeader h2 {
-    font-size: 30px;
-    line-height: 1.15;
-    letter-spacing: -1px;
-  }
-
-  .section-heading p,
-  .sectionMiniHeader p {
-    font-size: 15px;
-  }
-
-  .steps-grid,
-  .market-grid,
-  .features-section,
-  .packages-grid,
-  .packageGrid,
-  .dashboardPackageGrid,
-  .packageGrid.dashboardPackageGrid,
-  .packagesPageGrid,
-  .statsGrid,
-  .dashboardStatsOneLine,
-  .activePackageInfo,
-  .depositGrid,
-  .paymentSettingsGrid {
-    grid-template-columns: 1fr !important;
-    gap: 16px !important;
-  }
-
-  .dashboardStatsOneLine {
-    margin-bottom: 34px !important;
-  }
-
-  .dashboardStatsOneLine .statCard {
-    min-height: 112px;
-    padding: 22px;
-  }
-
-  .dashboardStatsOneLine .statCard h3 {
+  .section-heading h2 {
     font-size: 28px;
   }
 
-  .dashboardPackageCard,
-  .packagesPageCard {
-    min-height: auto;
+  .section-heading p {
+    font-size: 13px;
   }
 
-  .package-top {
-    flex-direction: column;
-    align-items: flex-start;
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .step-card {
+    min-height: 190px;
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .step-card strong {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    font-size: 17px;
+  }
+
+  .step-card h3 {
+    font-size: 17px;
+    margin: 16px 0 8px;
+  }
+
+  .step-card p {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .market-grid,
+  .packages-grid,
+  .features-section {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .market-card,
+  .package-card,
+  .feature-box {
+    border-radius: 20px;
   }
 
   .market-card-img {
-    height: 190px;
+    height: 130px;
+  }
+
+  .market-card-body,
+  .feature-box {
+    padding: 16px;
+  }
+
+  .market-card-body h3,
+  .feature-box h3 {
+    font-size: 17px;
+  }
+
+  .market-card-body p,
+  .feature-box p {
+    font-size: 12px;
+  }
+
+  .package-card {
+    min-height: 250px;
+    padding: 18px;
+  }
+
+  .package-top {
+    gap: 8px;
+  }
+
+  .package-top h3 {
+    font-size: 17px;
+  }
+
+  .package-top span {
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+
+  .package-card h2 {
+    font-size: 22px;
+  }
+
+  .package-info p {
+    font-size: 12px;
+  }
+
+  .package-link {
+    min-height: 42px;
+    padding: 11px 12px;
+    font-size: 12px;
   }
 
   .cta-section {
-    margin-left: 14px;
-    margin-right: 14px;
+    margin: 0 14px 40px;
     padding: 38px 18px;
+    border-radius: 24px;
   }
 
   .cta-section h2 {
-    font-size: 29px;
+    font-size: 28px;
   }
 
-  .authPage,
-  .loginPage,
+  .cta-section p {
+    font-size: 13px;
+  }
+
+  /* Login/signup same computer style */
+  .loginPage {
+    padding: 24px 14px;
+  }
+
+  .authShell,
+  .signupShell {
+    grid-template-columns: 0.9fr 1fr;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .authSide {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .authBadge {
+    font-size: 10px;
+    padding: 7px 10px;
+  }
+
+  .authSide h1 {
+    font-size: 25px;
+    line-height: 1.05;
+    margin: 18px 0 10px;
+    letter-spacing: -1px;
+  }
+
+  .authSide p {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .authFeatureList {
+    margin-top: 20px;
+    gap: 9px;
+  }
+
+  .authFeatureList div {
+    padding: 11px;
+    border-radius: 14px;
+  }
+
+  .authFeatureList strong {
+    font-size: 12px;
+  }
+
+  .authFeatureList span {
+    font-size: 10px;
+  }
+
+  .loginCard,
+  .signupCard,
+  .authCard {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .authHeader h2 {
+    font-size: 25px;
+  }
+
+  .authHeader p {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+
+  .loginCard label,
+  .signupCard label {
+    font-size: 12px;
+    margin: 11px 0;
+  }
+
+  .loginCard input,
+  .signupCard input,
+  input,
+  select,
+  textarea {
+    min-height: 42px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+  }
+
+  .loginSubmitBtn,
+  .btn {
+    min-height: 42px;
+    padding: 10px 12px;
+    font-size: 12px;
+    border-radius: 12px;
+  }
+
+  .authBottomText {
+    font-size: 12px;
+    margin-top: 14px;
+  }
+
+  /* Dashboard / admin mobile */
+  .statsGrid,
+  .dashboardStatsOneLine {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    margin-bottom: 28px !important;
+  }
+
+  .statCard {
+    min-height: 92px;
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .statCard p {
+    font-size: 10px;
+    margin-bottom: 8px;
+  }
+
+  .statCard h3 {
+    font-size: 17px;
+  }
+
+  .packageGrid,
+  .dashboardPackageGrid,
+  .packagesPageGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+
+  .packageCard,
+  .dashboardPackageCard,
+  .packagesPageCard {
+    min-height: 210px;
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .packageCard h3,
+  .dashboardPackageCard h3,
+  .packagesPageCard h3 {
+    font-size: 16px;
+  }
+
+  .price {
+    font-size: 22px;
+  }
+
+  .sectionMiniHeader {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .sectionMiniHeader h2 {
+    font-size: 24px;
+  }
+
+  .sectionMiniHeader p {
+    font-size: 12px;
+  }
+
+  .activePackageInfo,
+  .depositGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .activePackageInfo div,
+  .depositGrid div {
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .activePackageInfo strong,
+  .depositGrid strong {
+    font-size: 13px;
+  }
+
+  .tableCard {
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 680px;
+  }
+
+  th,
+  td {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .modalBackdrop {
+    padding: 12px;
+  }
+
+  .modal,
+  .adminCreateModal,
+  .activatePackageModal {
+    width: 100%;
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .modalHeader h2 {
+    font-size: 22px;
+  }
+
+  /* Withdrawals same style */
   .withdrawalsPage {
     padding: 24px 14px;
+  }
+
+  .withdrawalShell {
+    grid-template-columns: 0.9fr 1fr;
+    gap: 12px;
+  }
+
+  .withdrawalSide {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .withdrawalSide h1 {
+    font-size: 25px;
+    margin: 18px 0 10px;
+  }
+
+  .withdrawalSide p {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .withdrawalBalanceBox {
+    margin-top: 18px;
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .withdrawalBalanceBox strong {
+    font-size: 22px;
+  }
+
+  .withdrawalCard {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .withdrawalHistorySection {
+    width: 100%;
+    margin-top: 26px;
+  }
+}
+
+/* Extra small phone */
+@media (max-width: 430px) {
+  .hero-section {
+    gap: 10px;
+  }
+
+  .hero-content h1 {
+    font-size: 27px;
+  }
+
+  .hero-content p {
+    font-size: 11px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    font-size: 11px;
+    padding: 9px 8px;
+  }
+
+  .mainMarketImage {
+    height: 155px;
+  }
+
+  .floatingWalletCard {
+    width: 112px;
+    padding: 10px;
+  }
+
+  .floatingWalletCard h3 {
+    font-size: 18px;
+  }
+
+  .floatingTaskCard {
+    width: 72px;
+    padding: 9px;
+  }
+
+  .floatingTaskCard strong {
+    font-size: 21px;
   }
 
   .authShell,
   .signupShell,
   .withdrawalShell {
-    width: 100%;
-    gap: 18px;
+    gap: 10px;
   }
 
   .authSide,
-  .withdrawalSide {
-    padding: 26px;
+  .withdrawalSide,
+  .loginCard,
+  .signupCard,
+  .withdrawalCard {
+    padding: 15px;
   }
 
   .authSide h1,
   .withdrawalSide h1 {
-    font-size: 32px;
+    font-size: 22px;
   }
 
   .authSide p,
-  .withdrawalSide p {
-    font-size: 15px;
+  .withdrawalSide p,
+  .authHeader p {
+    font-size: 11px;
   }
 
-  .loginCard,
-  .signupCard,
-  .withdrawalCard,
-  .authCard {
-    padding: 24px;
+  .authFeatureList div {
+    padding: 9px;
+  }
+
+  .authFeatureList strong {
+    font-size: 11px;
+  }
+
+  .authFeatureList span {
+    font-size: 9px;
   }
 
   .authHeader h2 {
-    font-size: 29px;
+    font-size: 22px;
+  }
+
+  .statsGrid,
+  .dashboardStatsOneLine {
+    gap: 8px !important;
+  }
+
+  .statCard {
+    padding: 11px;
+    min-height: 84px;
+  }
+
+  .statCard p {
+    font-size: 9px;
+  }
+
+  .statCard h3 {
+    font-size: 15px;
+  }
+
+  .packageGrid,
+  .dashboardPackageGrid,
+  .packagesPageGrid,
+  .market-grid,
+  .packages-grid,
+  .features-section,
+  .steps-grid {
+    gap: 10px !important;
+  }
+
+  .packageCard,
+  .dashboardPackageCard,
+  .packagesPageCard,
+  .step-card,
+  .market-card,
+  .package-card,
+  .feature-box {
+    padding: 13px;
+    border-radius: 16px;
+  }
+
+  .step-card h3,
+  .market-card-body h3,
+  .feature-box h3,
+  .package-top h3 {
+    font-size: 15px;
+  }
+
+  .step-card p,
+  .market-card-body p,
+  .feature-box p,
+  .package-info p {
+    font-size: 10px;
   }
 
   input,
   select,
-  textarea {
-    min-height: 48px;
-    font-size: 15px;
-  }
-
-  label {
-    font-size: 14px;
-  }
-
-  .modalBackdrop {
-    padding: 12px;
-    align-items: start;
-    overflow-y: auto;
-  }
-
-  .modal,
-  .adminCreateModal,
-  .activatePackageModal,
-  .paymentModal {
-    width: 100% !important;
-    max-height: calc(100vh - 24px);
-    overflow-y: auto;
-    padding: 22px;
-  }
-
-  .tableCard {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  table {
-    min-width: 760px;
-  }
-
-  th,
-  td {
-    padding: 11px;
-    font-size: 13px;
-  }
-
-  .withdrawalHistorySection {
-    width: 100%;
-    margin-top: 24px;
-  }
-
-  .withdrawalHistoryCard table,
-  .walletTransactionsCard table {
-    min-width: 760px;
-  }
-
-  .checkboxLabel {
-    flex-direction: row !important;
-    align-items: center;
-  }
-
-  .checkboxLabel input {
-    width: auto !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .topbar {
-    padding: 10px 12px;
-  }
-
-  .brandMark {
-    width: 38px;
-    height: 38px;
-    border-radius: 13px;
-    font-size: 12px;
-  }
-
-  .brand strong {
-    font-size: 17px;
-  }
-
-  .brand small {
-    display: none;
-  }
-
-  .page {
-    padding: 18px 12px;
-  }
-
-  .pageHeader h1 {
-    font-size: 27px;
-  }
-
-  .hero-content h1 {
-    font-size: 36px;
-  }
-
-  .hero-badge,
-  .section-heading span,
-  .sectionTag {
-    font-size: 12px;
-    padding: 8px 11px;
-  }
-
-  .mainMarketImage {
-    height: 220px;
-  }
-
-  .section-heading h2,
-  .sectionMiniHeader h2 {
-    font-size: 27px;
-  }
-
-  .statCard h3,
-  .dashboardStatsOneLine .statCard h3 {
-    font-size: 25px;
-  }
-
-  .price {
-    font-size: 26px;
-  }
-
-  .market-card-img {
-    height: 165px;
-  }
-
-  .card,
-  .loginCard,
-  .signupCard,
-  .withdrawalCard,
-  .authSide,
-  .withdrawalSide,
-  .adminCreateModal,
-  .activatePackageModal {
-    padding: 20px;
-  }
-
-  .authSide h1,
-  .withdrawalSide h1 {
-    font-size: 29px;
-  }
-
-  .withdrawalBalanceBox strong {
-    font-size: 27px;
-  }
-
-  .cta-section {
-    margin-left: 8px;
-    margin-right: 8px;
-    padding: 34px 16px;
-  }
-
-  .cta-section h2 {
-    font-size: 25px;
-  }
-
-  .depositGrid div,
-  .activePackageInfo div {
-    padding: 14px;
-  }
-
-  .depositGrid strong,
-  .activePackageInfo strong {
-    font-size: 15px;
-  }
-
-  .activePackageInfo .smallStrong {
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 360px) {
-  .page {
-    padding: 16px 10px;
-  }
-
-  .hero-content h1 {
-    font-size: 32px;
-  }
-
-  .mainMarketImage {
-    height: 200px;
-  }
-
-  .section-heading h2,
-  .sectionMiniHeader h2 {
-    font-size: 24px;
-  }
-
-  .pageHeader h1 {
-    font-size: 24px;
-  }
-
-  .card,
-  .loginCard,
-  .signupCard,
-  .withdrawalCard,
-  .authSide,
-  .withdrawalSide,
-  .adminCreateModal,
-  .activatePackageModal {
-    padding: 17px;
-  }
-
-  .nav {
-    padding: 10px;
-  }
-
-  .nav a,
-  .logoutBtn {
-    padding: 11px 12px;
-    font-size: 13px;
+  textarea,
+  .btn,
+  .loginSubmitBtn {
+    min-height: 38px;
+    font-size: 11px;
   }
 }
