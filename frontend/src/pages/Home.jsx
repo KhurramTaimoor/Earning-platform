@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import VideoAd, { VideoAdsRow } from '../components/VideoAd.jsx';
+import VideoAd from '../components/VideoAd.jsx';
 
 const WHATSAPP_NUMBER_DISPLAY = '034151764474';
 const WHATSAPP_NUMBER_LINK = '9234151764474';
@@ -207,7 +207,7 @@ export default function Home() {
         </div>
       </section>
 
-      <VideoAd index={0} size="large" />
+      <VideoAd />
 
       <section className="how-section">
         <div className="section-heading animate-up">
@@ -233,8 +233,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      <VideoAd index={1} size="small" />
 
       <section className="market-section">
         <div className="section-heading animate-up">
@@ -265,8 +263,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      <VideoAd index={2} size="large" />
 
       <section className="packages-section">
         <div className="section-heading animate-up">
@@ -307,8 +303,6 @@ export default function Home() {
         </div>
       </section>
 
-      <VideoAdsRow start={3} count={3} />
-
       <section className="features-section">
         <div className="feature-box animate-card" data-delay="0">
           <h3>User Dashboard</h3>
@@ -334,8 +328,6 @@ export default function Home() {
           </p>
         </div>
       </section>
-
-      <VideoAd index={6} size="small" />
 
       <section className="cta-section animate-up">
         <h2>Ready to start with BMS EarnHub?</h2>
