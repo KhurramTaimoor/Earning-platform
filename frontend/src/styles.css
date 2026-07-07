@@ -2449,3 +2449,385 @@ th {
     font-size: 7.8px;
   }
 }
+/* =========================
+   FINAL AUTO ROTATING VIDEO ADS
+========================= */
+
+.videoAd {
+  width: min(1160px, 100%);
+  margin: 28px auto;
+  padding: 0 20px;
+}
+
+.videoAdBadge {
+  display: inline-flex;
+  margin-bottom: 10px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: #fee2e2;
+  color: #991b1b;
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.videoAdBox {
+  min-height: 190px;
+  padding: 18px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.12), transparent 30%),
+    linear-gradient(135deg, #ffffff, #f8fbff);
+  border: 1px solid #dbe3f0;
+  box-shadow: 0 20px 55px rgba(15, 23, 42, 0.08);
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.videoAd-small .videoAdBox {
+  min-height: 150px;
+  grid-template-columns: 285px 1fr;
+}
+
+.videoAdMedia {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #0f172a;
+}
+
+.videoAd-small .videoAdMedia {
+  height: 132px;
+}
+
+.videoAdPlayer {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #0f172a;
+  display: block;
+}
+
+.videoAdFallback {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.35), transparent 32%),
+    linear-gradient(135deg, #172554, #2563eb);
+  color: white;
+  text-align: center;
+  font-weight: 950;
+  cursor: pointer;
+}
+
+.videoAdFallbackEmoji {
+  font-size: 38px;
+  margin-bottom: 6px;
+}
+
+.videoAdPlay {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #172554;
+  font-size: 14px;
+  font-weight: 950;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.2);
+  pointer-events: none;
+}
+
+.videoAdPlay.mini {
+  width: 34px;
+  height: 34px;
+  left: 10px;
+  bottom: 10px;
+  font-size: 12px;
+}
+
+.videoAdContent h3 {
+  margin: 0 0 10px;
+  color: #06184a;
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+.videoAdContent p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.65;
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.videoAdNextBtn {
+  margin-top: 18px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-weight: 950;
+  cursor: pointer;
+}
+
+.videoAdsRowSection {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 58px 20px;
+}
+
+.videoAdsRowHeader {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 30px;
+}
+
+.videoAdsRowHeader span {
+  display: inline-flex;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: #fee2e2;
+  color: #991b1b;
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.videoAdsRowHeader h2 {
+  margin: 14px 0 10px;
+  color: #06184a;
+  font-size: 34px;
+  line-height: 1.1;
+}
+
+.videoAdsRowHeader p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.videoAdsRowGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.videoAdMiniCard {
+  overflow: hidden;
+  border-radius: 26px;
+  background: #ffffff;
+  border: 1px solid #dbe3f0;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.07);
+}
+
+.videoAdMiniMedia {
+  position: relative;
+  height: 175px;
+  overflow: hidden;
+  background: #0f172a;
+}
+
+.videoAdMiniBody {
+  padding: 20px;
+}
+
+.videoAdMiniBody span {
+  display: inline-flex;
+  margin-bottom: 10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #fee2e2;
+  color: #991b1b;
+  font-size: 10px;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.videoAdMiniBody h3 {
+  margin: 0 0 8px;
+  color: #06184a;
+  font-size: 20px;
+}
+
+.videoAdMiniBody p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.55;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .videoAd {
+    padding: 0 14px;
+    margin: 20px auto;
+  }
+
+  .videoAdBadge {
+    font-size: 10px;
+    padding: 6px 9px;
+  }
+
+  .videoAdBox {
+    min-height: 118px;
+    padding: 12px;
+    border-radius: 20px;
+    grid-template-columns: 150px 1fr;
+    gap: 12px;
+  }
+
+  .videoAd-small .videoAdBox {
+    min-height: 105px;
+    grid-template-columns: 135px 1fr;
+  }
+
+  .videoAdMedia {
+    height: 96px;
+    border-radius: 16px;
+  }
+
+  .videoAd-small .videoAdMedia {
+    height: 84px;
+  }
+
+  .videoAdPlay {
+    width: 30px;
+    height: 30px;
+    left: 8px;
+    bottom: 8px;
+    font-size: 10px;
+  }
+
+  .videoAdContent h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+
+  .videoAdContent p {
+    font-size: 10.5px;
+    line-height: 1.45;
+  }
+
+  .videoAdNextBtn {
+    margin-top: 8px;
+    padding: 7px 10px;
+    font-size: 10px;
+  }
+
+  .videoAdFallbackEmoji {
+    font-size: 24px;
+  }
+
+  .videoAdFallback span {
+    font-size: 10px;
+  }
+
+  .videoAdsRowSection {
+    padding: 38px 14px;
+  }
+
+  .videoAdsRowHeader {
+    margin-bottom: 20px;
+  }
+
+  .videoAdsRowHeader h2 {
+    font-size: 24px;
+  }
+
+  .videoAdsRowHeader p {
+    font-size: 12px;
+  }
+
+  .videoAdsRowGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .videoAdMiniCard {
+    border-radius: 16px;
+  }
+
+  .videoAdMiniMedia {
+    height: 86px;
+  }
+
+  .videoAdMiniBody {
+    padding: 10px;
+  }
+
+  .videoAdMiniBody span {
+    font-size: 7px;
+    padding: 4px 6px;
+    margin-bottom: 7px;
+  }
+
+  .videoAdMiniBody h3 {
+    font-size: 11px;
+    margin-bottom: 5px;
+  }
+
+  .videoAdMiniBody p {
+    font-size: 8.5px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 430px) {
+  .videoAdBox {
+    grid-template-columns: 132px 1fr;
+    gap: 10px;
+  }
+
+  .videoAd-small .videoAdBox {
+    grid-template-columns: 118px 1fr;
+  }
+
+  .videoAdMedia {
+    height: 84px;
+  }
+
+  .videoAd-small .videoAdMedia {
+    height: 76px;
+  }
+
+  .videoAdContent h3 {
+    font-size: 13px;
+  }
+
+  .videoAdContent p {
+    font-size: 9px;
+  }
+
+  .videoAdsRowGrid {
+    gap: 8px;
+  }
+
+  .videoAdMiniMedia {
+    height: 72px;
+  }
+
+  .videoAdMiniBody {
+    padding: 8px;
+  }
+
+  .videoAdMiniBody h3 {
+    font-size: 10px;
+  }
+
+  .videoAdMiniBody p {
+    font-size: 7.8px;
+  }
+}
