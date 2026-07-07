@@ -2831,3 +2831,546 @@ th {
     font-size: 7.8px;
   }
 }
+/* =========================
+   FINAL FUNNY ROTATING ADS
+   This overrides old video ad design
+========================= */
+
+.videoAd.funnyVideoAd {
+  width: min(1160px, 100%);
+  margin: 28px auto;
+  padding: 0 20px;
+}
+
+.videoAdBadge {
+  display: inline-flex;
+  margin-bottom: 10px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.videoAdBox.funnyAdBox {
+  min-height: 190px;
+  padding: 18px;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.14), transparent 32%),
+    linear-gradient(135deg, #ffffff, #f8fbff);
+  border: 1px solid #dbe3f0;
+  box-shadow: 0 22px 58px rgba(15, 23, 42, 0.08);
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 24px;
+  align-items: center;
+  overflow: hidden;
+}
+
+.videoAd-small .videoAdBox.funnyAdBox {
+  min-height: 150px;
+  grid-template-columns: 290px 1fr;
+}
+
+.videoAdMedia.funnyAdMedia {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #172554;
+}
+
+.videoAd-small .videoAdMedia.funnyAdMedia {
+  height: 132px;
+}
+
+.funnyPoster {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 18px;
+  color: #ffffff;
+  cursor: pointer;
+  overflow: hidden;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.funnyPosterGlow {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  right: -42px;
+  top: -45px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.funnyPosterEmoji {
+  position: relative;
+  z-index: 1;
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 34px;
+  backdrop-filter: blur(8px);
+}
+
+.funnyPoster strong {
+  position: relative;
+  z-index: 1;
+  font-size: 25px;
+  line-height: 1.05;
+  max-width: 270px;
+}
+
+.funnyPoster span {
+  position: relative;
+  z-index: 1;
+  font-size: 13px;
+  opacity: 0.88;
+  font-weight: 850;
+}
+
+.funnyPoster-chai {
+  background: linear-gradient(135deg, #92400e, #f59e0b);
+}
+
+.funnyPoster-mobile {
+  background: linear-gradient(135deg, #172554, #2563eb);
+}
+
+.funnyPoster-wallet {
+  background: linear-gradient(135deg, #14532d, #22c55e);
+}
+
+.funnyPoster-proof {
+  background: linear-gradient(135deg, #581c87, #a855f7);
+}
+
+.funnyPoster-light {
+  background: linear-gradient(135deg, #713f12, #eab308);
+}
+
+.funnyPoster-ninja {
+  background: linear-gradient(135deg, #020617, #334155);
+}
+
+.funnyPoster-internet {
+  background: linear-gradient(135deg, #0f766e, #06b6d4);
+}
+
+.videoAdContent.funnyAdContent h3 {
+  margin: 0 0 10px;
+  color: #06184a;
+  font-size: 31px;
+  line-height: 1.1;
+}
+
+.videoAdContent.funnyAdContent p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.65;
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.funnyAdActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.funnyAdActions span {
+  display: inline-flex;
+  padding: 9px 13px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 950;
+}
+
+.videoAdNextBtn {
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 950;
+  cursor: pointer;
+  box-shadow: 0 12px 26px rgba(37, 99, 235, 0.22);
+}
+
+.videoAdsRowSection.funnyAdsRowSection {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 58px 20px;
+}
+
+.videoAdsRowHeader {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 30px;
+}
+
+.videoAdsRowHeader span {
+  display: inline-flex;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.videoAdsRowHeader h2 {
+  margin: 14px 0 10px;
+  color: #06184a;
+  font-size: 34px;
+  line-height: 1.1;
+}
+
+.videoAdsRowHeader p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.videoAdsRowGrid.funnyAdsRowGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.videoAdMiniCard.funnyMiniCard {
+  overflow: hidden;
+  border-radius: 28px;
+  background: #ffffff;
+  border: 1px solid #dbe3f0;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.07);
+}
+
+.funnyMiniPoster {
+  width: 100%;
+  height: 150px;
+  border: 0;
+  padding: 18px;
+  cursor: pointer;
+  color: white;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.funnyMiniPoster span {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 28px;
+}
+
+.funnyMiniPoster strong {
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+.funnyMiniCard-chai .funnyMiniPoster {
+  background: linear-gradient(135deg, #92400e, #f59e0b);
+}
+
+.funnyMiniCard-mobile .funnyMiniPoster {
+  background: linear-gradient(135deg, #172554, #2563eb);
+}
+
+.funnyMiniCard-wallet .funnyMiniPoster {
+  background: linear-gradient(135deg, #14532d, #22c55e);
+}
+
+.funnyMiniCard-proof .funnyMiniPoster {
+  background: linear-gradient(135deg, #581c87, #a855f7);
+}
+
+.funnyMiniCard-light .funnyMiniPoster {
+  background: linear-gradient(135deg, #713f12, #eab308);
+}
+
+.funnyMiniCard-ninja .funnyMiniPoster {
+  background: linear-gradient(135deg, #020617, #334155);
+}
+
+.funnyMiniCard-internet .funnyMiniPoster {
+  background: linear-gradient(135deg, #0f766e, #06b6d4);
+}
+
+.videoAdMiniBody.funnyMiniBody {
+  padding: 20px;
+}
+
+.videoAdMiniBody.funnyMiniBody span {
+  display: inline-flex;
+  margin-bottom: 10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 10px;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.videoAdMiniBody.funnyMiniBody h3 {
+  margin: 0 0 8px;
+  color: #06184a;
+  font-size: 20px;
+}
+
+.videoAdMiniBody.funnyMiniBody p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.55;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .videoAd.funnyVideoAd {
+    padding: 0 14px;
+    margin: 20px auto;
+  }
+
+  .videoAdBadge {
+    font-size: 10px;
+    padding: 6px 9px;
+  }
+
+  .videoAdBox.funnyAdBox {
+    min-height: 118px;
+    padding: 12px;
+    border-radius: 20px;
+    grid-template-columns: 145px 1fr;
+    gap: 12px;
+  }
+
+  .videoAd-small .videoAdBox.funnyAdBox {
+    min-height: 105px;
+    grid-template-columns: 132px 1fr;
+  }
+
+  .videoAdMedia.funnyAdMedia {
+    height: 96px;
+    border-radius: 16px;
+  }
+
+  .videoAd-small .videoAdMedia.funnyAdMedia {
+    height: 84px;
+  }
+
+  .funnyPoster {
+    padding: 10px;
+    gap: 5px;
+  }
+
+  .funnyPosterGlow {
+    width: 80px;
+    height: 80px;
+    right: -28px;
+    top: -28px;
+  }
+
+  .funnyPosterEmoji {
+    width: 34px;
+    height: 34px;
+    border-radius: 12px;
+    font-size: 20px;
+  }
+
+  .funnyPoster strong {
+    font-size: 13px;
+    max-width: 110px;
+  }
+
+  .funnyPoster span {
+    font-size: 9px;
+  }
+
+  .videoAdContent.funnyAdContent h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+
+  .videoAdContent.funnyAdContent p {
+    font-size: 10.5px;
+    line-height: 1.45;
+  }
+
+  .funnyAdActions {
+    margin-top: 8px;
+    gap: 7px;
+  }
+
+  .funnyAdActions span {
+    font-size: 9px;
+    padding: 6px 8px;
+  }
+
+  .videoAdNextBtn {
+    padding: 7px 10px;
+    font-size: 10px;
+  }
+
+  .videoAdsRowSection.funnyAdsRowSection {
+    padding: 38px 14px;
+  }
+
+  .videoAdsRowHeader {
+    margin-bottom: 20px;
+  }
+
+  .videoAdsRowHeader h2 {
+    font-size: 24px;
+  }
+
+  .videoAdsRowHeader p {
+    font-size: 12px;
+  }
+
+  .videoAdsRowGrid.funnyAdsRowGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .videoAdMiniCard.funnyMiniCard {
+    border-radius: 16px;
+  }
+
+  .funnyMiniPoster {
+    height: 82px;
+    padding: 10px;
+    gap: 5px;
+  }
+
+  .funnyMiniPoster span {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 18px;
+  }
+
+  .funnyMiniPoster strong {
+    font-size: 10px;
+  }
+
+  .videoAdMiniBody.funnyMiniBody {
+    padding: 10px;
+  }
+
+  .videoAdMiniBody.funnyMiniBody span {
+    font-size: 7px;
+    padding: 4px 6px;
+    margin-bottom: 7px;
+  }
+
+  .videoAdMiniBody.funnyMiniBody h3 {
+    font-size: 11px;
+    margin-bottom: 5px;
+  }
+
+  .videoAdMiniBody.funnyMiniBody p {
+    font-size: 8.5px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 430px) {
+  .videoAdBox.funnyAdBox {
+    grid-template-columns: 130px 1fr;
+    gap: 10px;
+  }
+
+  .videoAd-small .videoAdBox.funnyAdBox {
+    grid-template-columns: 118px 1fr;
+  }
+
+  .videoAdMedia.funnyAdMedia {
+    height: 86px;
+  }
+
+  .videoAd-small .videoAdMedia.funnyAdMedia {
+    height: 78px;
+  }
+
+  .funnyPoster strong {
+    font-size: 12px;
+  }
+
+  .funnyPoster span {
+    font-size: 8px;
+  }
+
+  .videoAdContent.funnyAdContent h3 {
+    font-size: 13px;
+  }
+
+  .videoAdContent.funnyAdContent p {
+    font-size: 9px;
+  }
+
+  .funnyAdActions span {
+    display: none;
+  }
+
+  .videoAdNextBtn {
+    font-size: 9px;
+  }
+
+  .videoAdsRowGrid.funnyAdsRowGrid {
+    gap: 8px;
+  }
+
+  .funnyMiniPoster {
+    height: 72px;
+    padding: 8px;
+  }
+
+  .funnyMiniPoster span {
+    width: 26px;
+    height: 26px;
+    font-size: 15px;
+  }
+
+  .funnyMiniPoster strong {
+    font-size: 9px;
+  }
+
+  .videoAdMiniBody.funnyMiniBody {
+    padding: 8px;
+  }
+
+  .videoAdMiniBody.funnyMiniBody h3 {
+    font-size: 10px;
+  }
+
+  .videoAdMiniBody.funnyMiniBody p {
+    font-size: 7.8px;
+  }
+}
