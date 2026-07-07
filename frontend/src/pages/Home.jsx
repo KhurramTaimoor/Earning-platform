@@ -1,6 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
+const WHATSAPP_NUMBER_DISPLAY = '034151764474';
+const WHATSAPP_NUMBER_LINK = '9234151764474';
+const WHATSAPP_MESSAGE = encodeURIComponent(
+  'Assalam o Alaikum, I want to know more about BMS EarnHub.'
+);
+
 const MOBILE_WALLET_IMAGE =
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3t9FGYYn7A_nM5QjCQBR-iVC0am324Bpqva_JUvrxzA&s=10';
 
@@ -9,6 +15,8 @@ const LOCAL_BUSINESS_TASK_IMAGE =
 
 const PAKISTANI_MARKET_IMAGE =
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzR9-QmCu12WdBQkLXPGUWT00htW0P71vmJQt__1vcTw&s=10';
+
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER_LINK}?text=${WHATSAPP_MESSAGE}`;
 
 const packages = [
   { name: 'Starter', price: 500, limit: 150, tasks: 'Basic task access' },
@@ -75,13 +83,23 @@ function SafeImage({ src, alt }) {
   );
 }
 
-/**
- * Scroll-triggers the existing .animate-up / .animate-card keyframes.
- * Both classes start at opacity:0 in the stylesheet; this hook adds
- * .in-view (which is what actually plays the `fadeUp` animation) the
- * moment an element enters the viewport, with an optional stagger
- * driven by each element's data-delay attribute.
- */
+function WhatsAppIcon() {
+  return (
+    <svg
+      viewBox="0 0 32 32"
+      width="24"
+      height="24"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path
+        fill="currentColor"
+        d="M16.02 3.2C8.96 3.2 3.22 8.9 3.22 15.92c0 2.25.6 4.45 1.74 6.38L3.1 29.1l6.98-1.83a12.8 12.8 0 0 0 5.94 1.5h.01c7.06 0 12.8-5.7 12.8-12.72S23.08 3.2 16.02 3.2Zm0 23.42h-.01a10.66 10.66 0 0 1-5.42-1.48l-.39-.23-4.14 1.08 1.1-4.02-.26-.41a10.5 10.5 0 0 1-1.61-5.64c0-5.84 4.8-10.6 10.73-10.6 2.86 0 5.56 1.1 7.58 3.1a10.5 10.5 0 0 1 3.15 7.53c0 5.84-4.81 10.6-10.73 10.6Zm5.88-7.94c-.32-.16-1.9-.93-2.2-1.04-.29-.1-.5-.16-.72.16-.21.32-.83 1.04-1.02 1.25-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.58-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.72-1.72-.99-2.36-.26-.62-.52-.53-.72-.54h-.62c-.21 0-.56.08-.85.4-.29.32-1.12 1.1-1.12 2.67s1.15 3.1 1.31 3.31c.16.21 2.27 3.45 5.5 4.84.77.33 1.37.53 1.83.68.77.24 1.47.21 2.03.13.62-.09 1.9-.77 2.17-1.52.27-.75.27-1.39.19-1.52-.08-.13-.29-.21-.61-.37Z"
+      />
+    </svg>
+  );
+}
+
 function useScrollReveal(rootRef) {
   useEffect(() => {
     const root = rootRef.current;
@@ -127,6 +145,17 @@ export default function Home() {
 
   return (
     <main className="home-page" ref={pageRef}>
+      <a
+        href={WHATSAPP_URL}
+        className="whatsappFloat"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Chat on WhatsApp"
+      >
+        <WhatsAppIcon />
+        <span>WhatsApp</span>
+      </a>
+
       <section className="hero-section">
         <div className="hero-content animate-up">
           <span className="hero-badge">BMS EarnHub Pakistan</span>
@@ -308,7 +337,35 @@ export default function Home() {
           Get Started
         </Link>
       </section>
+
+      <footer className="homeFooter">
+        <div className="homeFooterInner">
+          <div>
+            <h3>BMS EarnHub</h3>
+            <p>
+              Pakistan based task earning platform with package activation,
+              task proof, wallet, and manual approval system.
+            </p>
+          </div>
+
+          <div className="footerContactBox">
+            <span>Contact on WhatsApp</span>
+
+            <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+              <WhatsAppIcon />
+              {WHATSAPP_NUMBER_DISPLAY}
+            </a>
+          </div>
+        </div>
+
+        <div className="homeFooterBottom">
+          <p>© {new Date().getFullYear()} BMS EarnHub. All rights reserved.</p>
+
+          <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+            WhatsApp Support
+          </a>
+        </div>
+      </footer>
     </main>
   );
 }
-
