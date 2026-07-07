@@ -1,29 +1,35 @@
 import React, { useEffect, useMemo, useState } from 'react';
 
-const youtubeAds = [
+const pakistaniFunnyAds = [
   {
-    tag: 'Funny YouTube Ad',
-    title: 'Chai Break Video',
-    text: 'Quick funny video ad. Chai pakro, ad dekho, phir task complete karo.',
-    youtubeId: 'dQw4w9WgXcQ',
+    tag: 'Pakistani Funny Ad',
+    title: 'Funniest Pakistani Ads',
+    text: 'Pakistani TV ads ka funny collection. Light entertainment before tasks.',
+    youtubeId: 'wmxXvLRGb74',
   },
   {
-    tag: 'Funny YouTube Ad',
-    title: 'Mobile Load Mood',
-    text: 'Mobile balance bachao aur tasks complete karo.',
-    youtubeId: 'jNQXAC9IVRw',
+    tag: 'Ufone Funny Ad',
+    title: 'Ufone Pakistani Funny Ad',
+    text: 'Classic Pakistani funny ad style with local humor.',
+    youtubeId: 'zsbWiaM7QTY',
   },
   {
-    tag: 'Funny YouTube Ad',
-    title: 'Wallet Smile Time',
-    text: 'Wallet ko khush karne ka time aa gaya.',
-    youtubeId: '9bZkp7q19f0',
+    tag: 'Pakistani Funny Ad',
+    title: 'Pakistani Ads Part 5',
+    text: 'Funny Pakistani ad clips for a quick sponsored break.',
+    youtubeId: 'x-v0tS0gLHI',
   },
   {
-    tag: 'Funny YouTube Ad',
-    title: 'Task Break Video',
-    text: 'Short entertainment break before next task.',
-    youtubeId: 'kJQP7kiw5Fk',
+    tag: 'Funny Commercial',
+    title: 'Pakistani Commercial Humor',
+    text: 'Funny commercial style ad for your earning platform page.',
+    youtubeId: 'mZO57_0H9Ug',
+  },
+  {
+    tag: 'Funny Ad Break',
+    title: 'Husband Wife Funny Ad',
+    text: 'Funny South Asian commercial style ad break.',
+    youtubeId: 'Rn7co3LQPi4',
   },
 ];
 
@@ -34,35 +40,37 @@ function getYoutubeEmbedUrl(videoId) {
 export default function VideoAd() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const ad = useMemo(
-    () => youtubeAds[currentIndex % youtubeAds.length],
-    [currentIndex]
-  );
+  const ad = useMemo(() => {
+    return pakistaniFunnyAds[currentIndex % pakistaniFunnyAds.length];
+  }, [currentIndex]);
 
   function nextAd() {
-    setCurrentIndex((prev) => (prev + 1) % youtubeAds.length);
+    setCurrentIndex((prev) => (prev + 1) % pakistaniFunnyAds.length);
   }
 
   useEffect(() => {
     const timer = setInterval(() => {
       nextAd();
-    }, 16000);
+    }, 18000);
 
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <section className="youtubeAdSection">
-      <div className="youtubeAdHeader">
-        <span>{ad.tag}</span>
-        <h2>Watch a funny sponsored video</h2>
+    <section className="pakistaniVideoAdSection">
+      <div className="pakistaniVideoAdHeader">
+        <span>Pakistani Funny Video Ad</span>
+
+        <h2>Watch a funny sponsored ad</h2>
+
         <p>
-          This video ad changes automatically. Users can also click next ad.
+          Funny Pakistani-style video ad section. Video changes automatically
+          after a few seconds.
         </p>
       </div>
 
-      <div className="youtubeAdCard">
-        <div className="youtubeAdVideo">
+      <div className="pakistaniVideoAdCard">
+        <div className="pakistaniVideoFrame">
           <iframe
             key={ad.youtubeId}
             src={getYoutubeEmbedUrl(ad.youtubeId)}
@@ -72,21 +80,19 @@ export default function VideoAd() {
           />
         </div>
 
-        <div className="youtubeAdContent">
-          <span className="youtubeAdBadge">{ad.tag}</span>
+        <div className="pakistaniVideoContent">
+          <span>{ad.tag}</span>
 
           <h3>{ad.title}</h3>
 
           <p>{ad.text}</p>
 
-          <div className="youtubeAdActions">
+          <div className="pakistaniVideoActions">
             <button type="button" onClick={nextAd}>
-              Next Video Ad
+              Next Pakistani Ad
             </button>
 
-            <small>
-              Auto changing ad section
-            </small>
+            <small>Auto changing funny video ad</small>
           </div>
         </div>
       </div>
