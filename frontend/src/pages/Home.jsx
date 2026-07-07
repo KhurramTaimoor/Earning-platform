@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import VideoAd from '../components/VideoAd.jsx';
 
-const WHATSAPP_NUMBER_DISPLAY = '034151764474';
-const WHATSAPP_NUMBER_LINK = '9234151764474';
+const WHATSAPP_NUMBER_DISPLAY = '03451764474';
+const WHATSAPP_NUMBER_LINK = '923451764474';
 const WHATSAPP_MESSAGE = encodeURIComponent(
   'Assalam o Alaikum, I want to know more about BMS EarnHub.'
 );
