@@ -3374,3 +3374,196 @@ th {
     font-size: 7.8px;
   }
 }
+/* =========================
+   SINGLE FUNNY YOUTUBE AD SECTION
+========================= */
+
+.youtubeAdSection {
+  max-width: 1160px;
+  margin: 24px auto 20px;
+  padding: 0 20px;
+}
+
+.youtubeAdHeader {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 24px;
+}
+
+.youtubeAdHeader span {
+  display: inline-flex;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.youtubeAdHeader h2 {
+  margin: 14px 0 10px;
+  color: #06184a;
+  font-size: 36px;
+  line-height: 1.1;
+}
+
+.youtubeAdHeader p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.youtubeAdCard {
+  padding: 22px;
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.13), transparent 32%),
+    linear-gradient(135deg, #ffffff, #f8fbff);
+  border: 1px solid #dbe3f0;
+  box-shadow: 0 24px 65px rgba(15, 23, 42, 0.09);
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 26px;
+  align-items: center;
+}
+
+.youtubeAdVideo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 26px;
+  overflow: hidden;
+  background: #0f172a;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+}
+
+.youtubeAdVideo iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.youtubeAdContent {
+  padding: 10px 8px;
+}
+
+.youtubeAdBadge {
+  display: inline-flex;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.youtubeAdContent h3 {
+  margin: 18px 0 10px;
+  color: #06184a;
+  font-size: 34px;
+  line-height: 1.1;
+}
+
+.youtubeAdContent p {
+  margin: 0;
+  color: #64748b;
+  font-size: 17px;
+  line-height: 1.65;
+  font-weight: 750;
+}
+
+.youtubeAdActions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.youtubeAdActions button {
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 950;
+  cursor: pointer;
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.24);
+}
+
+.youtubeAdActions small {
+  color: #64748b;
+  font-weight: 850;
+}
+
+@media (max-width: 768px) {
+  .youtubeAdSection {
+    padding: 0 14px;
+    margin: 18px auto;
+  }
+
+  .youtubeAdHeader {
+    margin-bottom: 16px;
+  }
+
+  .youtubeAdHeader span {
+    font-size: 10px;
+    padding: 6px 9px;
+  }
+
+  .youtubeAdHeader h2 {
+    font-size: 24px;
+  }
+
+  .youtubeAdHeader p {
+    font-size: 12px;
+  }
+
+  .youtubeAdCard {
+    padding: 14px;
+    border-radius: 22px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .youtubeAdVideo {
+    border-radius: 18px;
+  }
+
+  .youtubeAdContent {
+    padding: 0;
+  }
+
+  .youtubeAdBadge {
+    font-size: 10px;
+    padding: 6px 9px;
+  }
+
+  .youtubeAdContent h3 {
+    margin: 12px 0 6px;
+    font-size: 22px;
+  }
+
+  .youtubeAdContent p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .youtubeAdActions {
+    margin-top: 14px;
+    gap: 10px;
+  }
+
+  .youtubeAdActions button {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+
+  .youtubeAdActions small {
+    font-size: 11px;
+  }
+}
