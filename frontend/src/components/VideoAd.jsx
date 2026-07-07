@@ -1,39 +1,39 @@
 import React, { useEffect, useMemo, useState } from 'react';
 
-const pakistaniFunnyAds = [
+const pakistaniShortAds = [
   {
-    tag: 'Pakistani Funny Ad',
-    title: 'Funniest Pakistani Ads',
-    text: 'Pakistani TV ads ka funny collection. Light entertainment before tasks.',
-    youtubeId: 'wmxXvLRGb74',
+    tag: 'Pakistani Funny Short',
+    title: 'Pakistani Ads Have No Logic',
+    text: 'Funny Pakistani ad style short. Quick entertainment break before tasks.',
+    youtubeId: 'yFwY2eA8yoo',
   },
   {
-    tag: 'Ufone Funny Ad',
-    title: 'Ufone Pakistani Funny Ad',
-    text: 'Classic Pakistani funny ad style with local humor.',
-    youtubeId: 'zsbWiaM7QTY',
+    tag: 'Funny Short Ad',
+    title: 'Most Funny Pakistani TV Ads',
+    text: 'Short Pakistani funny ad clip for a light sponsored break.',
+    youtubeId: 'KSdnE9mvaaI',
   },
   {
-    tag: 'Pakistani Funny Ad',
-    title: 'Pakistani Ads Part 5',
-    text: 'Funny Pakistani ad clips for a quick sponsored break.',
-    youtubeId: 'x-v0tS0gLHI',
+    tag: 'Pakistani Ads',
+    title: 'Pakistani Ads Short',
+    text: 'Local Pakistani ad style short video for your platform.',
+    youtubeId: 'lEqDJNN2tz0',
   },
   {
-    tag: 'Funny Commercial',
-    title: 'Pakistani Commercial Humor',
-    text: 'Funny commercial style ad for your earning platform page.',
-    youtubeId: 'mZO57_0H9Ug',
+    tag: 'Comedy Ad Short',
+    title: 'Servis Ad Funny Edition',
+    text: 'Pakistani drama funny edition style short ad.',
+    youtubeId: 'LS4jVnou3b0',
   },
   {
-    tag: 'Funny Ad Break',
-    title: 'Husband Wife Funny Ad',
-    text: 'Funny South Asian commercial style ad break.',
-    youtubeId: 'Rn7co3LQPi4',
+    tag: 'Funny Sponsored Short',
+    title: 'Nawab Biryani Funny Ad',
+    text: 'Pakistani funny ad short for quick entertainment.',
+    youtubeId: 'co92exjbVdI',
   },
 ];
 
-function getYoutubeEmbedUrl(videoId) {
+function getShortEmbedUrl(videoId) {
   return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=1&rel=0&modestbranding=1&playsinline=1`;
 }
 
@@ -41,58 +41,77 @@ export default function VideoAd() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const ad = useMemo(() => {
-    return pakistaniFunnyAds[currentIndex % pakistaniFunnyAds.length];
+    return pakistaniShortAds[currentIndex % pakistaniShortAds.length];
   }, [currentIndex]);
 
   function nextAd() {
-    setCurrentIndex((prev) => (prev + 1) % pakistaniFunnyAds.length);
+    setCurrentIndex((prev) => (prev + 1) % pakistaniShortAds.length);
   }
 
   useEffect(() => {
     const timer = setInterval(() => {
       nextAd();
-    }, 18000);
+    }, 14000);
 
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <section className="pakistaniVideoAdSection">
-      <div className="pakistaniVideoAdHeader">
-        <span>Pakistani Funny Video Ad</span>
+    <section className="shortsAdSection">
+      <div className="shortsAdHeader">
+        <span>Pakistani Funny Shorts Ad</span>
 
-        <h2>Watch a funny sponsored ad</h2>
+        <h2>Watch a short sponsored ad</h2>
 
         <p>
-          Funny Pakistani-style video ad section. Video changes automatically
-          after a few seconds.
+          Short Pakistani funny ads in mobile style. The ad changes automatically.
         </p>
       </div>
 
-      <div className="pakistaniVideoAdCard">
-        <div className="pakistaniVideoFrame">
-          <iframe
-            key={ad.youtubeId}
-            src={getYoutubeEmbedUrl(ad.youtubeId)}
-            title={ad.title}
-            allow="autoplay; encrypted-media; picture-in-picture"
-            allowFullScreen
-          />
+      <div className="shortsAdCard">
+        <div className="shortsPhoneFrame">
+          <div className="shortsPhoneTop">
+            <span />
+            <strong>Short Ad</strong>
+            <span />
+          </div>
+
+          <div className="shortsVideoBox">
+            <iframe
+              key={ad.youtubeId}
+              src={getShortEmbedUrl(ad.youtubeId)}
+              title={ad.title}
+              allow="autoplay; encrypted-media; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         </div>
 
-        <div className="pakistaniVideoContent">
-          <span>{ad.tag}</span>
+        <div className="shortsAdContent">
+          <span className="shortsAdBadge">{ad.tag}</span>
 
           <h3>{ad.title}</h3>
 
           <p>{ad.text}</p>
 
-          <div className="pakistaniVideoActions">
+          <div className="shortsAdDots">
+            {pakistaniShortAds.map((item, index) => (
+              <button
+                key={item.youtubeId}
+                type="button"
+                className={index === currentIndex ? 'active' : ''}
+                onClick={() => setCurrentIndex(index)}
+                aria-label={`Show ad ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          <div className="shortsAdActions">
             <button type="button" onClick={nextAd}>
-              Next Pakistani Ad
+              Next Short Ad
             </button>
 
-            <small>Auto changing funny video ad</small>
+            <small>Auto changing every few seconds</small>
           </div>
         </div>
       </div>
