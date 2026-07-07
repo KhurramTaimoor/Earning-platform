@@ -3567,3 +3567,204 @@ th {
     font-size: 11px;
   }
 }
+/* =========================
+   SINGLE PAKISTANI FUNNY VIDEO AD
+========================= */
+
+.pakistaniVideoAdSection {
+  max-width: 1160px;
+  margin: 28px auto 34px;
+  padding: 0 20px;
+}
+
+.pakistaniVideoAdHeader {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 24px;
+}
+
+.pakistaniVideoAdHeader span {
+  display: inline-flex;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.pakistaniVideoAdHeader h2 {
+  margin: 14px 0 10px;
+  color: #06184a;
+  font-size: 36px;
+  line-height: 1.1;
+}
+
+.pakistaniVideoAdHeader p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.65;
+}
+
+.pakistaniVideoAdCard {
+  padding: 22px;
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.14), transparent 32%),
+    linear-gradient(135deg, #ffffff, #f8fbff);
+  border: 1px solid #dbe3f0;
+  box-shadow: 0 24px 65px rgba(15, 23, 42, 0.09);
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 26px;
+  align-items: center;
+}
+
+.pakistaniVideoFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 26px;
+  overflow: hidden;
+  background: #0f172a;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+}
+
+.pakistaniVideoFrame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.pakistaniVideoContent {
+  padding: 10px 8px;
+}
+
+.pakistaniVideoContent span {
+  display: inline-flex;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pakistaniVideoContent h3 {
+  margin: 18px 0 10px;
+  color: #06184a;
+  font-size: 34px;
+  line-height: 1.1;
+}
+
+.pakistaniVideoContent p {
+  margin: 0;
+  color: #64748b;
+  font-size: 17px;
+  line-height: 1.65;
+  font-weight: 750;
+}
+
+.pakistaniVideoActions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.pakistaniVideoActions button {
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 950;
+  cursor: pointer;
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.24);
+}
+
+.pakistaniVideoActions small {
+  color: #64748b;
+  font-weight: 850;
+}
+
+/* Hide old funny/video ad designs if old components remain */
+.funnyVideoAd,
+.funnyAdsRowSection,
+.videoAdsRowSection,
+.videoAd.funnyVideoAd {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .pakistaniVideoAdSection {
+    padding: 0 14px;
+    margin: 20px auto 28px;
+  }
+
+  .pakistaniVideoAdHeader {
+    margin-bottom: 16px;
+  }
+
+  .pakistaniVideoAdHeader span {
+    font-size: 10px;
+    padding: 6px 9px;
+  }
+
+  .pakistaniVideoAdHeader h2 {
+    font-size: 24px;
+  }
+
+  .pakistaniVideoAdHeader p {
+    font-size: 12px;
+  }
+
+  .pakistaniVideoAdCard {
+    padding: 14px;
+    border-radius: 22px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .pakistaniVideoFrame {
+    border-radius: 18px;
+  }
+
+  .pakistaniVideoContent {
+    padding: 0;
+  }
+
+  .pakistaniVideoContent span {
+    font-size: 10px;
+    padding: 6px 9px;
+  }
+
+  .pakistaniVideoContent h3 {
+    margin: 12px 0 6px;
+    font-size: 22px;
+  }
+
+  .pakistaniVideoContent p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .pakistaniVideoActions {
+    margin-top: 14px;
+    gap: 10px;
+  }
+
+  .pakistaniVideoActions button {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+
+  .pakistaniVideoActions small {
+    font-size: 11px;
+  }
+}
