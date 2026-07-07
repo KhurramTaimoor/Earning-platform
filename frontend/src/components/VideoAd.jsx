@@ -3,38 +3,38 @@ import React, { useEffect, useMemo, useState } from 'react';
 const pakistaniShortAds = [
   {
     tag: 'Pakistani Funny Short',
-    title: 'Pakistani Ads Have No Logic',
-    text: 'Funny Pakistani ad style short. Quick entertainment break before tasks.',
+    title: 'Pakistani Funny Ad',
+    text: 'Quick Pakistani funny short ad for a light entertainment break.',
     youtubeId: 'yFwY2eA8yoo',
   },
   {
-    tag: 'Funny Short Ad',
-    title: 'Most Funny Pakistani TV Ads',
-    text: 'Short Pakistani funny ad clip for a light sponsored break.',
+    tag: 'Funny Short',
+    title: 'Funny Pakistani TV Ad',
+    text: 'A short sponsored video ad in Pakistani funny style.',
     youtubeId: 'KSdnE9mvaaI',
   },
   {
-    tag: 'Pakistani Ads',
-    title: 'Pakistani Ads Short',
-    text: 'Local Pakistani ad style short video for your platform.',
+    tag: 'Short Ad',
+    title: 'Pakistani Comedy Ad',
+    text: 'Small funny ad break before users continue browsing.',
     youtubeId: 'lEqDJNN2tz0',
   },
   {
-    tag: 'Comedy Ad Short',
-    title: 'Servis Ad Funny Edition',
-    text: 'Pakistani drama funny edition style short ad.',
+    tag: 'Comedy Short',
+    title: 'Servis Funny Edition',
+    text: 'Pakistani ad style short video for a clean ad section.',
     youtubeId: 'LS4jVnou3b0',
   },
   {
-    tag: 'Funny Sponsored Short',
-    title: 'Nawab Biryani Funny Ad',
-    text: 'Pakistani funny ad short for quick entertainment.',
+    tag: 'Sponsored Short',
+    title: 'Funny Local Ad',
+    text: 'Short mobile-style sponsored ad for BMS EarnHub.',
     youtubeId: 'co92exjbVdI',
   },
 ];
 
-function getShortEmbedUrl(videoId) {
-  return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=1&rel=0&modestbranding=1&playsinline=1`;
+function getYoutubeEmbedUrl(videoId) {
+  return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&disablekb=1&fs=0`;
 }
 
 export default function VideoAd() {
@@ -57,29 +57,25 @@ export default function VideoAd() {
   }, []);
 
   return (
-    <section className="shortsAdSection">
-      <div className="shortsAdHeader">
+    <section className="bmsShortsAdSection">
+      <div className="bmsShortsAdHeader">
         <span>Pakistani Funny Shorts Ad</span>
-
         <h2>Watch a short sponsored ad</h2>
-
-        <p>
-          Short Pakistani funny ads in mobile style. The ad changes automatically.
-        </p>
+        <p>Short Pakistani funny ads in mobile style. The ad changes automatically.</p>
       </div>
 
-      <div className="shortsAdCard">
-        <div className="shortsPhoneFrame">
-          <div className="shortsPhoneTop">
+      <div className="bmsShortsAdCard">
+        <div className="bmsShortsPhone">
+          <div className="bmsShortsPhoneTop">
             <span />
-            <strong>Short Ad</strong>
+            <strong>BMS Short Ad</strong>
             <span />
           </div>
 
-          <div className="shortsVideoBox">
+          <div className="bmsShortsVideo">
             <iframe
               key={ad.youtubeId}
-              src={getShortEmbedUrl(ad.youtubeId)}
+              src={getYoutubeEmbedUrl(ad.youtubeId)}
               title={ad.title}
               allow="autoplay; encrypted-media; picture-in-picture"
               allowFullScreen
@@ -87,26 +83,26 @@ export default function VideoAd() {
           </div>
         </div>
 
-        <div className="shortsAdContent">
-          <span className="shortsAdBadge">{ad.tag}</span>
+        <div className="bmsShortsAdContent">
+          <span className="bmsShortsBadge">{ad.tag}</span>
 
           <h3>{ad.title}</h3>
 
           <p>{ad.text}</p>
 
-          <div className="shortsAdDots">
+          <div className="bmsShortsDots">
             {pakistaniShortAds.map((item, index) => (
               <button
                 key={item.youtubeId}
                 type="button"
                 className={index === currentIndex ? 'active' : ''}
                 onClick={() => setCurrentIndex(index)}
-                aria-label={`Show ad ${index + 1}`}
+                aria-label={`Show short ad ${index + 1}`}
               />
             ))}
           </div>
 
-          <div className="shortsAdActions">
+          <div className="bmsShortsActions">
             <button type="button" onClick={nextAd}>
               Next Short Ad
             </button>
