@@ -3768,3 +3768,338 @@ th {
     font-size: 11px;
   }
 }
+/* =========================
+   CLEAN PAKISTANI SHORTS AD
+   paste at END of styles.css
+========================= */
+
+.bmsShortsAdSection {
+  max-width: 1160px;
+  margin: 28px auto 36px;
+  padding: 0 20px;
+}
+
+.bmsShortsAdHeader {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 24px;
+}
+
+.bmsShortsAdHeader span {
+  display: inline-flex;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.bmsShortsAdHeader h2 {
+  margin: 14px 0 10px;
+  color: #06184a;
+  font-size: 36px;
+  line-height: 1.1;
+}
+
+.bmsShortsAdHeader p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.65;
+}
+
+.bmsShortsAdCard {
+  padding: 28px;
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.14), transparent 32%),
+    linear-gradient(135deg, #ffffff, #f8fbff);
+  border: 1px solid #dbe3f0;
+  box-shadow: 0 24px 65px rgba(15, 23, 42, 0.09);
+  display: grid;
+  grid-template-columns: 330px 1fr;
+  gap: 38px;
+  align-items: center;
+}
+
+.bmsShortsPhone {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 34px;
+  background: #020617;
+  box-shadow:
+    0 28px 60px rgba(15, 23, 42, 0.24),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.bmsShortsPhoneTop {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ffffff;
+  padding: 0 12px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.bmsShortsPhoneTop span {
+  width: 22px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.bmsShortsVideo {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border-radius: 26px;
+  overflow: hidden;
+  background: #0f172a;
+  position: relative;
+}
+
+.bmsShortsVideo iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.bmsShortsAdContent {
+  padding: 10px 8px;
+}
+
+.bmsShortsBadge {
+  display: inline-flex;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.bmsShortsAdContent h3 {
+  margin: 18px 0 10px;
+  color: #06184a;
+  font-size: 38px;
+  line-height: 1.1;
+}
+
+.bmsShortsAdContent p {
+  margin: 0;
+  color: #64748b;
+  font-size: 17px;
+  line-height: 1.65;
+  font-weight: 750;
+  max-width: 560px;
+}
+
+.bmsShortsDots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.bmsShortsDots button {
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
+  background: #cbd5e1;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.bmsShortsDots button.active {
+  width: 34px;
+  background: #2563eb;
+}
+
+.bmsShortsActions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.bmsShortsActions button {
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 950;
+  cursor: pointer;
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.24);
+}
+
+.bmsShortsActions small {
+  color: #64748b;
+  font-weight: 850;
+}
+
+/* hide old ad designs */
+.funnyVideoAd,
+.funnyAdsRowSection,
+.videoAdsRowSection,
+.videoAd.funnyVideoAd,
+.youtubeAdSection,
+.pakistaniVideoAdSection,
+.shortsAdSection {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .bmsShortsAdSection {
+    padding: 0 14px;
+    margin: 20px auto 28px;
+  }
+
+  .bmsShortsAdHeader {
+    margin-bottom: 16px;
+  }
+
+  .bmsShortsAdHeader span {
+    font-size: 10px;
+    padding: 6px 9px;
+  }
+
+  .bmsShortsAdHeader h2 {
+    font-size: 24px;
+  }
+
+  .bmsShortsAdHeader p {
+    font-size: 12px;
+  }
+
+  .bmsShortsAdCard {
+    padding: 14px;
+    border-radius: 22px;
+    grid-template-columns: 138px 1fr;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .bmsShortsPhone {
+    max-width: 138px;
+    padding: 6px;
+    border-radius: 20px;
+  }
+
+  .bmsShortsPhoneTop {
+    height: 20px;
+    padding: 0 6px;
+    font-size: 7px;
+  }
+
+  .bmsShortsPhoneTop span {
+    width: 13px;
+    height: 3px;
+  }
+
+  .bmsShortsVideo {
+    border-radius: 14px;
+  }
+
+  .bmsShortsAdContent {
+    padding: 0;
+  }
+
+  .bmsShortsBadge {
+    font-size: 8px;
+    padding: 5px 7px;
+  }
+
+  .bmsShortsAdContent h3 {
+    margin: 9px 0 5px;
+    font-size: 17px;
+  }
+
+  .bmsShortsAdContent p {
+    font-size: 10.5px;
+    line-height: 1.45;
+  }
+
+  .bmsShortsDots {
+    margin-top: 10px;
+    gap: 5px;
+  }
+
+  .bmsShortsDots button {
+    width: 7px;
+    height: 7px;
+  }
+
+  .bmsShortsDots button.active {
+    width: 22px;
+  }
+
+  .bmsShortsActions {
+    margin-top: 10px;
+    gap: 8px;
+  }
+
+  .bmsShortsActions button {
+    padding: 8px 10px;
+    font-size: 10px;
+  }
+
+  .bmsShortsActions small {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 430px) {
+  .bmsShortsAdCard {
+    grid-template-columns: 118px 1fr;
+    gap: 10px;
+  }
+
+  .bmsShortsPhone {
+    max-width: 118px;
+    border-radius: 17px;
+    padding: 5px;
+  }
+
+  .bmsShortsPhoneTop {
+    height: 17px;
+    font-size: 6px;
+  }
+
+  .bmsShortsPhoneTop span {
+    width: 10px;
+  }
+
+  .bmsShortsVideo {
+    border-radius: 12px;
+  }
+
+  .bmsShortsBadge {
+    font-size: 7px;
+  }
+
+  .bmsShortsAdContent h3 {
+    font-size: 14px;
+  }
+
+  .bmsShortsAdContent p {
+    font-size: 9px;
+  }
+
+  .bmsShortsActions small {
+    display: none;
+  }
+
+  .bmsShortsActions button {
+    padding: 7px 9px;
+    font-size: 9px;
+  }
+}
